@@ -58,6 +58,9 @@
 
 <script>
 	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter;
+	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter, startValue;
+
+	startValue = <?php echo($start_val); ?>;
 
 	wardTotalCounter = new flipCounter('wardTotal', {
 		inc: <?php echo($info->average ? $info->average : 1); ?>,
@@ -85,11 +88,13 @@
 			console.log(info);
 
 			if(wardTotalCounter){
-				wardTotalCounter.setIncrement(info.average);
+				// Adjust the average and correct the number
+				wardTotalCounter.setIncrement(info.average).setValue(info.total);
 			}
 
 			if(nightlyTotalCounter){
-				nightlyTotalCounter.setIncrement(info.average);
+				// Adjust the average and correct the number (total - start)
+				nightlyTotalCounter.setIncrement(info.average).setValue(info.total-startValue);
 			}
 		};
 		r.send();
