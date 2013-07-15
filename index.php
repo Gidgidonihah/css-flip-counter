@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+
+	$timeframe = 1;
+
+	include_once('functions.php');
+
+	$start_val = getStartValue();
+	$info = json_decode(calculateValues($timeframe));
+
+?><!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8"/>
@@ -21,7 +30,8 @@
 
 <div class="clearfix">
 	<div class="counter-wrapper">
-		<ul class="flip-counter huge" id="wardTotal"> <li class="start-value">3,800</li>
+		<ul class="flip-counter huge" id="wardTotal">
+			<li class="start-value"><?php echo($info->total); ?></li>
 		</ul>
 	</div>
 </div>
@@ -31,7 +41,7 @@
 <div class="clearfix">
 	<div class="counter-wrapper">
 		<ul class="flip-counter large" id="nightlyTotal">
-			<li class="start-value">200</li>
+			<li class="start-value"><?php echo($info->total-$start_val); ?></li>
 		</ul>
 	</div>
 </div>
@@ -49,72 +59,43 @@
 <script>
 	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter;
 
+	wardTotalCounter = new flipCounter('wardTotal', {
+		inc: <?php echo($info->average); ?>,
+		pace: <?php echo($timeframe*1000); ?>,
+		digits: 6
+	});
+
+	nightlyTotalCounter = new flipCounter('nightlyTotal', {
+		inc: <?php echo($info->average); ?>,
+		pace: <?php echo($timeframe*1000); ?>,
+		digits: 4
+	});
+
 	var wardGoalCounter = new flipCounter('wardGoal', {
 		auto: false
 	});
 
 	function runCounters(){
 		var r = new XMLHttpRequest();
-		r.open("GET", "update.php", true);
+		r.open("GET", "update.php?timeframe=<?php echo($timeframe); ?>", true);
 		r.onreadystatechange = function () {
 			if (r.readyState != 4 || r.status != 200) return;
 			info = JSON.parse(r.responseText);
 
-			if(!wardTotalCounter){
-				wardTotalCounter = new flipCounter('wardTotal', {
-					//pace: 1000,
-					digits: 6,
-					auto: false
-				});
-			}else{
-				console.log(wardTotalCounter);
-				console.log('updating ward');
+			console.log(info);
+
+			if(wardTotalCounter){
+				wardTotalCounter.setIncrement(info.average);
 			}
 
-			if(!nightlyTotalCounter){
-				nightlyTotalCounter = new flipCounter('nightlyTotal', {
-					digits: 4,
-					auto: false
-				});
-			}else{
-				console.log(nightlyTotalCounter);
-				console.log('updating nightly');
+			if(nightlyTotalCounter){
+				nightlyTotalCounter.setIncrement(info.average);
 			}
 		};
 		r.send();
 	}
 
-	runCounters();
-
-	setTimeout(runCounters, 3000)
-/*
-	$('#inc_slider').slider({
-		range: 'max',
-		value: 123,
-		min: 0,
-		max: 1000,
-		slide: function(event, ui){
-			$('#inc_value').text(ui.value);
-			myCounter.setIncrement(ui.value);
-
-			if (ui.value == 0) myCounter.setAuto(false);
-			else myCounter.setAuto(true);
-		}
-	});
-
-	// Pace
-	$('#pace_slider').slider({
-		range: 'max',
-		value: 1000,
-		min: 400,
-		max: 2000,
-		step: 100,
-		slide: function(event, ui){
-			myCounter.setPace(ui.value);
-			$("#pace_value").text(ui.value);
-		}
-	});
-	*/
+	setTimeout(runCounters, 60000)
 </script>
 </body>
 </html>

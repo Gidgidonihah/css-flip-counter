@@ -11,16 +11,27 @@
   clear: both;
 }
 body {
-  font: 14px 'Ubuntu', sans-serif;
+  font: 14px 'Roadgeek 2005 Series D', sans-serif;
+  background: rgb(179,220,237); /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 92%); /* FF3.6+ */ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(179,220,237,1)), color-stop(92%,rgba(41,184,229,1))); /* Chrome,Safari4+ */ background: -webkit-radial-gradient(center,     ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* Chrome10+,Safari5.1+ */ background: -o-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* Opera     12+ */ background: -ms-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* IE10+ */ background: radial-gradient(ellipse at center, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* W3C */
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 3em 0 0;
+  line-height: 1em;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 h1 {
-  text-align: center;
-  margin: 10px;
-  line-height: 60px;
-  font-weight: 700;
+  margin-top: 1em;
   font-size: 60px;
-  /* Web fonts look bad in Chrome even with -webkit-font-smoothing, so this is a cheap way to soften the jaggies */
-
+}
+h2 {
+  font-size: 50px;
+}
+h3 {
+  font-size: 30px;
 }
 #style-switcher {
   *zoom: 1;
@@ -95,7 +106,7 @@ p.info {
 .counter-wrapper {
   float: right;
   position: relative;
-  left: -50%;
+  left: -51%;
   margin-top: 20px;
 }
 .flip-counter {
@@ -123,11 +134,7 @@ p.info {
   -moz-perspective: 300px;
   -ms-perspective: 300px;
   perspective: 300px;
-  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 .flip-counter.default .digit:last-child {
@@ -139,11 +146,9 @@ p.info {
   height: 45px;
   width: 60px;
   overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 90px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   text-indent: 2px;
   background-color: #000000;
@@ -166,8 +171,6 @@ p.info {
   height: 45px;
   width: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.default .digit .hinge {
@@ -201,23 +204,23 @@ p.info {
 }
 .flip-counter.default .digit .hinge span.back {
   height: 45px;
-  -webkit-transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  -o-transform: rotateX(180deg);
-  transform: rotateX(180deg);
+  -webkit-transform: rotatex(180deg);
+  -moz-transform: rotatex(180deg);
+  -ms-transform: rotatex(180deg);
+  -o-transform: rotatex(180deg);
+  transform: rotatex(180deg);
 }
 .flip-counter.default .digit.animate .hinge {
-  -webkit-transform: rotateX(-180deg);
-  -moz-transform: rotateX(-180deg);
-  -ms-transform: rotateX(-180deg);
-  -o-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
+  -webkit-transform: rotatex(-180deg);
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -o-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }
 .flip-counter.default .digit-delimiter {
   padding-top: 38px;
   margin-right: -5px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   font-size: 52px;
   color: #000000;
@@ -238,11 +241,7 @@ p.info {
   -moz-perspective: 300px;
   -ms-perspective: 300px;
   perspective: 300px;
-  -webkit-box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
-  -moz-box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(232, 241, 255, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 .flip-counter.light .digit:last-child {
@@ -254,11 +253,9 @@ p.info {
   height: 45px;
   width: 60px;
   overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 90px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   text-indent: 2px;
   background-color: #e8f1ff;
@@ -281,8 +278,6 @@ p.info {
   height: 45px;
   width: 60px;
   border-bottom: 1px solid rgba(232, 241, 255, 0.7);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(232, 241, 255, 0.7);
 }
 .flip-counter.light .digit .hinge {
@@ -316,23 +311,23 @@ p.info {
 }
 .flip-counter.light .digit .hinge span.back {
   height: 45px;
-  -webkit-transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  -o-transform: rotateX(180deg);
-  transform: rotateX(180deg);
+  -webkit-transform: rotatex(180deg);
+  -moz-transform: rotatex(180deg);
+  -ms-transform: rotatex(180deg);
+  -o-transform: rotatex(180deg);
+  transform: rotatex(180deg);
 }
 .flip-counter.light .digit.animate .hinge {
-  -webkit-transform: rotateX(-180deg);
-  -moz-transform: rotateX(-180deg);
-  -ms-transform: rotateX(-180deg);
-  -o-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
+  -webkit-transform: rotatex(-180deg);
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -o-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }
 .flip-counter.light .digit-delimiter {
   padding-top: 38px;
   margin-right: -5px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   font-size: 52px;
   color: #e8f1ff;
@@ -353,11 +348,7 @@ p.info {
   -moz-perspective: 300px;
   -ms-perspective: 300px;
   perspective: 300px;
-  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 .flip-counter.small .digit:last-child {
@@ -369,11 +360,9 @@ p.info {
   height: 20px;
   width: 30px;
   overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 34px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   text-indent: 2px;
   background-color: #000000;
@@ -396,8 +385,6 @@ p.info {
   height: 20px;
   width: 30px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.small .digit .hinge {
@@ -431,27 +418,134 @@ p.info {
 }
 .flip-counter.small .digit .hinge span.back {
   height: 20px;
-  -webkit-transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  -o-transform: rotateX(180deg);
-  transform: rotateX(180deg);
+  -webkit-transform: rotatex(180deg);
+  -moz-transform: rotatex(180deg);
+  -ms-transform: rotatex(180deg);
+  -o-transform: rotatex(180deg);
+  transform: rotatex(180deg);
 }
 .flip-counter.small .digit.animate .hinge {
-  -webkit-transform: rotateX(-180deg);
-  -moz-transform: rotateX(-180deg);
-  -ms-transform: rotateX(-180deg);
-  -o-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
+  -webkit-transform: rotatex(-180deg);
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -o-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }
 .flip-counter.small .digit-delimiter {
   padding-top: 15px;
   margin-right: -2.5px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   font-size: 25px;
   color: #000000;
   text-indent: 1.6666666666666667px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.flip-counter.large .digit {
+  position: relative;
+  z-index: 0;
+  width: 110px;
+  height: 140px;
+  margin-left: 15px;
+  background-color: #000000;
+  text-align: center;
+  line-height: 0;
+  -webkit-text-stroke: 2px;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+.flip-counter.large .digit:last-child {
+  margin-left: 0;
+}
+.flip-counter.large .digit span {
+  position: absolute;
+  left: 0;
+  height: 70px;
+  width: 110px;
+  overflow: hidden;
+  border-radius: 5px;
+  font-size: 140px;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
+  font-weight: 700;
+  text-indent: 2px;
+  background-color: #000000;
+  color: #ffffff;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.flip-counter.large .digit span.front {
+  top: 0;
+  padding-top: 70px;
+}
+.flip-counter.large .digit span.back {
+  bottom: 0;
+}
+.flip-counter.large .digit .line {
+  position: absolute;
+  z-index: 10;
+  height: 70px;
+  width: 110px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
+}
+.flip-counter.large .digit .hinge {
+  position: absolute;
+  z-index: 5;
+  height: 70px;
+  width: 110px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+.flip-counter.large .digit .hinge span {
+  height: 0px;
+  z-index: 5px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-counter.large .digit .hinge span.front {
+  padding-top: 70px;
+}
+.flip-counter.large .digit .hinge span.back {
+  height: 70px;
+  -webkit-transform: rotatex(180deg);
+  -moz-transform: rotatex(180deg);
+  -ms-transform: rotatex(180deg);
+  -o-transform: rotatex(180deg);
+  transform: rotatex(180deg);
+}
+.flip-counter.large .digit.animate .hinge {
+  -webkit-transform: rotatex(-180deg);
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -o-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
+}
+.flip-counter.large .digit-delimiter {
+  padding-top: 80px;
+  margin-right: -7.5px;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #000000;
+  text-indent: 5px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .flip-counter.huge .digit {
@@ -468,11 +562,7 @@ p.info {
   -moz-perspective: 800px;
   -ms-perspective: 800px;
   perspective: 800px;
-  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 .flip-counter.huge .digit:last-child {
@@ -484,11 +574,9 @@ p.info {
   height: 100px;
   width: 140px;
   overflow: hidden;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 190px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   text-indent: 2px;
   background-color: #000000;
@@ -511,8 +599,6 @@ p.info {
   height: 100px;
   width: 140px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.7);
 }
 .flip-counter.huge .digit .hinge {
@@ -546,26 +632,27 @@ p.info {
 }
 .flip-counter.huge .digit .hinge span.back {
   height: 100px;
-  -webkit-transform: rotateX(180deg);
-  -moz-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  -o-transform: rotateX(180deg);
-  transform: rotateX(180deg);
+  -webkit-transform: rotatex(180deg);
+  -moz-transform: rotatex(180deg);
+  -ms-transform: rotatex(180deg);
+  -o-transform: rotatex(180deg);
+  transform: rotatex(180deg);
 }
 .flip-counter.huge .digit.animate .hinge {
-  -webkit-transform: rotateX(-180deg);
-  -moz-transform: rotateX(-180deg);
-  -ms-transform: rotateX(-180deg);
-  -o-transform: rotateX(-180deg);
-  transform: rotateX(-180deg);
+  -webkit-transform: rotatex(-180deg);
+  -moz-transform: rotatex(-180deg);
+  -ms-transform: rotatex(-180deg);
+  -o-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }
 .flip-counter.huge .digit-delimiter {
   padding-top: 130px;
   margin-right: -10px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roadgeek 2005 Series D', sans-serif;
   font-weight: 700;
   font-size: 70px;
   color: #000000;
   text-indent: 6.666666666666667px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
+

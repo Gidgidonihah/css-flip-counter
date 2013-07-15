@@ -1,72 +1,81 @@
 body {
-  font: 14px 'Ubuntu', sans-serif;
+	font: 14px 'Roadgeek 2005 Series D', sans-serif;
+	background: rgb(179,220,237); /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 92%); /* FF3.6+ */ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(179,220,237,1)), color-stop(92%,rgba(41,184,229,1))); /* Chrome,Safari4+ */ background: -webkit-radial-gradient(center,     ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* Chrome10+,Safari5.1+ */ background: -o-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* Opera     12+ */ background: -ms-radial-gradient(center, ellipse cover, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* IE10+ */ background: radial-gradient(ellipse at center, rgba(179,220,237,1) 0%,rgba(41,184,229,1) 92%); /* W3C */
 }
 
-h1 {
-  text-align: center;
-  margin: 10px;
-  line-height: 60px;
-  font-weight: 700;
-  font-size: 60px;
-  /* Web fonts look bad in Chrome even with -webkit-font-smoothing, so this is a cheap way to soften the jaggies */
-  //text-shadow: 0 0 1px #000;
+h1, h2, h3 {
+	text-align: center;
+	margin: 3em 0 0;
+	line-height: 1em;
+	font-weight: 700;
+	text-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+h1{
+	margin-top: 1em;
+	font-size: 60px;
+}
+h2{
+	font-size: 50px;
+}
+h3{
+	font-size: 30px;
 }
 
 #style-switcher {
-  .clearfix();
-  list-style-type: none;
-  width: 600px;
-  margin: 20px auto 10px;
+	.clearfix();
+	list-style-type: none;
+	width: 600px;
+	margin: 20px auto 10px;
 
-  li {
-    padding: 0;
-    width: 150px;
-    float: left;
-    text-align: center;
+	li {
+		padding: 0;
+		width: 150px;
+		float: left;
+		text-align: center;
 
-    a {
-      display: block;
-      padding: 5px 10px;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: 400;
-      color: #000;
+		a {
+			display: block;
+			padding: 5px 10px;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: 20px;
+			font-weight: 400;
+			color: #000;
 
-      &:hover {
-        font-size: 24px;
-      }
+			&:hover {
+				font-size: 24px;
+			}
 
-      &.active {
-        font-size: 24px;
-        font-weight: 700;
-        background: #eee;
-      }
-    }
-  }
+			&.active {
+				font-size: 24px;
+				font-weight: 700;
+				background: #eee;
+			}
+		}
+	}
 }
 
 #demo_controls {
-  .clearfix();
-  position: relative;
-  width: 700px;
-  margin: 0 auto;
-  padding: 20px 0;
-  list-style-type: none;
-  li {
-    width: 320px;
-    float: left;
-    text-align: center;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 15px;
-    p {
-      margin-bottom: 10px;
-    }
-  }
+	.clearfix();
+	position: relative;
+	width: 700px;
+	margin: 0 auto;
+	padding: 20px 0;
+	list-style-type: none;
+	li {
+		width: 320px;
+		float: left;
+		text-align: center;
+		margin: 0 15px;
+		font-weight: bold;
+		font-size: 15px;
+		p {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 p.info {
-  text-align: center;
-  margin-top: 20px;
+	text-align: center;
+	margin-top: 20px;
 }

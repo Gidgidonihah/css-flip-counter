@@ -14,7 +14,6 @@ var flipCounter = function(d, options){
 
   // Default values
   var defaults = {
-    value: 0,
     inc: 1,
     pace: 1000,
     auto: true
@@ -32,6 +31,12 @@ var flipCounter = function(d, options){
   var div = d;
   if (typeof d === 'string'){
     div = doc.getElementById(d);
+  }
+
+  // Set the start value based off the html
+  if(counter.value === undefined){
+    var startValue;
+	counter.value = ((startValue = div.querySelectorAll('.start-value').item(0)) ? parseInt(startValue.innerText.replace(/,/g, ""), 10) : 0);
   }
 
   /**
@@ -186,10 +191,11 @@ var flipCounter = function(d, options){
   // Sets the correct digits on load
   function _drawCounter(){
     var bit = 1, html = '', dNew, dOld;
+	_padDigits();
     for (var i = 0, count = digitsNew.length; i < count; i++){
       dNew = _isNumber(digitsNew[i]) ? digitsNew[i] : '';
       dOld = _isNumber(digitsOld[i]) ? digitsOld[i] : '';
-      html += '<li class="digit" id="digit-a'+i+'">'+
+      html += '<li class="digit" id="'+d+'-digit-a'+i+'">'+
         '<div class="line"></div>'+
         '<span class="front">'+dNew+'</span>'+
         '<span class="back">'+dOld+'</span>'+
@@ -212,11 +218,29 @@ var flipCounter = function(d, options){
     setTimeout(function(){
       for (var i = 0; i < alen; i++){
         if (digitsAnimate[i]){
-          var a = doc.getElementById('digit-a'+i);
+          var a = doc.getElementById(d+'-digit-a'+i);
           a.className = a.className+' animate';
         }
       }
     }, 20)
+
+  }
+
+  function _padDigits(){
+	if(counter.digits){
+		if(digitsNew.length < counter.digits){
+			var loop = counter.digits - digitsNew.length;
+			for(var i=0; i < loop; i++){
+				digitsNew.push(0);
+			}
+		}
+		if(digitsOld.length < counter.digits){
+			var loop = counter.digits - digitsOld.length;
+			for(var i=0; i < loop; i++){
+				digitsOld.push(0);
+			}
+		}
+	}
 
   }
 
