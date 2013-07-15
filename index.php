@@ -60,13 +60,13 @@
 	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter;
 
 	wardTotalCounter = new flipCounter('wardTotal', {
-		inc: <?php echo($info->average); ?>,
+		inc: <?php echo($info->average ? $info->average : 1); ?>,
 		pace: <?php echo($timeframe*1000); ?>,
 		digits: 6
 	});
 
 	nightlyTotalCounter = new flipCounter('nightlyTotal', {
-		inc: <?php echo($info->average); ?>,
+		inc: <?php echo($info->average ? $info->average : 1); ?>,
 		pace: <?php echo($timeframe*1000); ?>,
 		digits: 4
 	});
