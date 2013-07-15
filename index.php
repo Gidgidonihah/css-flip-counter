@@ -1,6 +1,6 @@
 <?php
 
-	$timeframe = 1;
+	$timeframe = 10;
 
 	include_once('functions.php');
 
@@ -57,19 +57,19 @@
 </div>
 
 <script>
-	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter;
 	var r, info, wardTotalCounter, nightlyTotalCounter, wardGoalCounter, startValue;
 
-	startValue = <?php echo($start_val); ?>;
+	startValue = <?php echo($start_val ? $start_val : 0); ?>;
+	latestValue = startValue;
 
 	wardTotalCounter = new flipCounter('wardTotal', {
-		inc: <?php echo($info->average ? $info->average : 1); ?>,
+		inc: <?php echo($info->average ? $info->average : 0); ?>,
 		pace: <?php echo($timeframe*1000); ?>,
 		digits: 6
 	});
 
 	nightlyTotalCounter = new flipCounter('nightlyTotal', {
-		inc: <?php echo($info->average ? $info->average : 1); ?>,
+		inc: <?php echo($info->average ? $info->average : 0); ?>,
 		pace: <?php echo($timeframe*1000); ?>,
 		digits: 4
 	});
@@ -89,18 +89,22 @@
 
 			if(wardTotalCounter){
 				// Adjust the average and correct the number
-				wardTotalCounter.setIncrement(info.average).setValue(info.total);
+				if(info.average) wardTotalCounter.setIncrement(info.average);
+				if(info.total != latestValue) wardTotalCounter.setValue(info.total);
 			}
 
 			if(nightlyTotalCounter){
 				// Adjust the average and correct the number (total - start)
-				nightlyTotalCounter.setIncrement(info.average).setValue(info.total-startValue);
+				if(info.average) nightlyTotalCounter.setIncrement(info.average);
+				if(info.total != latestValue) nightlyTotalCounter.setValue(info.total-startValue);
 			}
+
+			latestValue = info.total;
 		};
 		r.send();
 	}
 
-	setTimeout(runCounters, 60000)
+	setInterval(runCounters, 20000)
 </script>
 </body>
 </html>
